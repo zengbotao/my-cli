@@ -1,0 +1,23 @@
+{
+  "name": "mycli",
+  "version": "1.0.0",
+  "bin": {
+    "my-cli": "./bin/cli.js"
+  },
+  "description": "```bash\r my-cli/\r   ├── bin/\r   │   └── my-cli.js  # 命令行入口文件\r   ├── templates/     # 各种模板代码\r   ├── package.json\r   └── ...",
+  "main": "./bin/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zengbotao",
+  "license": "ISC",
+  "dependencies": {
+     "chalk": "^4.0.0",
+    "commander": "^9.4.1",
+    "figlet": "^1.5.2",
+    "fs-extra": "^11.1.0",
+    "git-clone": "^0.2.0",
+    "inquirer": "^8.0.0",
+    "ora": "^5.0.0"
+  }
+}
