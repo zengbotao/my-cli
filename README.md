@@ -237,7 +237,8 @@ Email: 注册邮箱
 Enter one-time password: 一次性密码  邮箱会收到邮件
 
 # 在我们脚手架的根目录下执行发布命令
-➜ npm publish
+npm adduser  
+npm publish --access public
 ```
 
 > 注意：
@@ -245,3 +246,5 @@ Enter one-time password: 一次性密码  邮箱会收到邮件
 > 1. 登录和发包前一定要先查看npm的源，需要修改为`https://registry.npmjs.org/`
 >
 > 2. 在发布时包名不能重复，所以可以先在线上搜索下看看有没有存在的包，如果出现403错误可能是包名和线上的包重复了，修改package.json中的name即可
+>
+> 3. 404报错，注意package.json中name是@wavesdean/mycli，只能是wavesdean

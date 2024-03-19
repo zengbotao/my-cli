@@ -1,6 +1,6 @@
 {
-  "name": "mycli",
-  "version": "1.0.0",
+  "name": "@wavesdean/mycli",
+  "version": "0.0.0",
   "bin": {
     "my-cli": "./bin/cli.js"
   },
