@@ -9,14 +9,12 @@ const ora = require("ora");
 const chalk = require("chalk");
 
 const projectList = {
-  vue: "git@github.com:kfc-vme50/vue-template.git",
-  react: "git@github.com:kfc-vme50/react-template.git",
-  "react&ts": "git@github.com:kfc-vme50/react-template-ts.git",
-  "vue&ts": "git@github.com:kfc-vme50/vue-template-ts.git",
+  vue: "git@github.com:zengbotao/umijs-antDpro.git",
+  react: "git@github.com:zengbotao/umijs-qiankun.git",
 };
 
 // 首行提示
-program.name("kfc-vme50-cli").usage("<command>");
+program.name("my-cli").usage("<command>");
 
 // 版本号
 program.version(`v${require("../package.json").version}`);
@@ -66,26 +64,25 @@ program
           },
         ],
       },
-      {
-        type: "list",
-        message: "是否要用ts?",
-        name: "ts",
-        choices: [
-          {
-            name: "是",
-            value: true,
-          },
-          {
-            name: "否",
-            value: false,
-          },
-        ],
-      },
+      // {
+      //   type: "list",
+      //   message: "是否要用ts?",
+      //   name: "ts",
+      //   choices: [
+      //     {
+      //       name: "是",
+      //       value: true,
+      //     },
+      //     {
+      //       name: "否",
+      //       value: false,
+      //     },
+      //   ],
+      // },
     ]);
-    const key = res.type + (res.ts ? "&ts" : "");
     const spinner = ora("下载中...").start();
     // console.log(projectList[key])
-    gitClone(projectList[key], name, { checkout: "main" }, function (err) {
+    gitClone(projectList[res.type], name, { checkout: "main" }, function (err) {
       if (err) {
         spinner.fail("下载失败, 请稍后重试");
       } else {
@@ -102,7 +99,7 @@ program
 // 给help信息添加提示
 program.on("--help", function () {
   console.log(
-    figlet.textSync("KFC-VME50", {
+    figlet.textSync("waves", {
       font: "Ghost",
       horizontalLayout: "default",
       verticalLayout: "default",
